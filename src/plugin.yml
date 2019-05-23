@@ -1,0 +1,32 @@
+name: TownWar
+version: 0.1.0
+author: Gulk
+main: ga.Gulk.mc.TownWar.Main
+api-version: 1.14
+description: Adds Town War! /townwar help for more
+load: STARTUP
+
+commands:
+  donkey:
+    description: Open's your town's donkey
+    usage: "Usage: /<command>"
+  town:
+    description: Parent command for town operations, gives TownWar version
+    usage: "Usage: /<command> <list|create|disband|invite|accept>"
+
+permissions:
+  townwar.*:
+    description: Allows all TownWar permissions
+    default: op
+    children:
+      townwar.forcecreate: true
+      townwar.forcedelete: true
+
+
+  townwar.forcecreate:
+    description: Allows forcing the creation of a town (could be used to re-create admin or public town)
+    default: op
+
+  townwar.forcedelete:
+    description: Allows forcing the deletion of towns you do not own
+    default: op
